@@ -18,7 +18,7 @@ public class Producer implements Runnable {
         this.timeout = timeout;
     }
 
-    public void stop(){
+    public void stop() {
         isActive = false;
     }
 
@@ -29,14 +29,12 @@ public class Producer implements Runnable {
 
         while (isActive) {
             try {
-                logger.info(this + "start create product.");
                 Thread.sleep(timeout);
             } catch (InterruptedException ex) {
                 logger.error("Exception sleep " + this, ex);
             }
 
             store.put(new Product());
-            logger.info(this + " put 1 product into store");
         }
     }
 
