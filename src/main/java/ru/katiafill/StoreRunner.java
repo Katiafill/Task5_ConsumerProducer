@@ -1,13 +1,17 @@
 package ru.katiafill;
 
+import ru.katiafill.models.Consumer;
+import ru.katiafill.models.Producer;
+import ru.katiafill.models.Store;
+import ru.katiafill.settings.Settings;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class StoreRunner {
-    private Store store;
-    private List<Producer> producers;
-    private List<Consumer> consumers;
+    private final Store store;
+    private final List<Producer> producers;
+    private final List<Consumer> consumers;
 
     StoreRunner(Settings settings) {
         store = new Store(settings.getStoreSize());

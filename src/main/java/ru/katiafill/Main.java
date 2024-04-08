@@ -2,6 +2,8 @@ package ru.katiafill;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import ru.katiafill.settings.Settings;
+import ru.katiafill.settings.SettingsLoader;
 
 import java.util.*;
 
@@ -17,8 +19,11 @@ public class Main {
 
         StoreRunner runner = new StoreRunner(settings);
         runner.run();
-        new Scanner(System.in).nextLine();
-        runner.stop();
+
+        try (Scanner scanner = new Scanner(System.in)) {
+            scanner.nextLine();
+            runner.stop();
+        }
 
     }
 }

@@ -1,4 +1,4 @@
-package ru.katiafill;
+package ru.katiafill.models;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,7 +34,7 @@ public class Consumer implements Runnable {
                 logger.error("Exception sleep " + this, ex);
             }
 
-            store.get();
+            Product product = store.get();
         }
     }
 

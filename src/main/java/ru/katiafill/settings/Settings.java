@@ -1,4 +1,4 @@
-package ru.katiafill;
+package ru.katiafill.settings;
 
 public class Settings {
     private int storeSize;

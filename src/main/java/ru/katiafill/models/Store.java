@@ -1,16 +1,15 @@
-package ru.katiafill;
+package ru.katiafill.models;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.Stack;
 
 public class Store {
     private static final Logger logger = LoggerFactory.getLogger(Store.class);
     private final int size;
-    private Deque<Product> products;
+    private final Deque<Product> products;
 
     public Store(int size) {
         this.size = size;
@@ -29,8 +28,10 @@ public class Store {
         }
 
         Product product = products.pop();
+
         logger.info("Getting " + product + " from store.");
         logger.info("Store size: " + products.size());
+
         notifyAll();
 
         return product;
@@ -47,8 +48,10 @@ public class Store {
             }
         }
         products.add(product);
+
         logger.info("Putting " +  product + " into store.");
         logger.info("Store size: " + products.size());
+
         notifyAll();
     }
 }

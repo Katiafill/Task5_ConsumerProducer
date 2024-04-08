@@ -1,4 +1,4 @@
-package ru.katiafill;
+package ru.katiafill.models;
 
 public class Product {
     private static int nextId = 0;
